@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prudhom Heating &amp; Air Conditioning | Edmond, OK Since 1983</title>
+<meta name="description" content="Family-owned HVAC contractor serving Edmond and the Oklahoma City metro since 1983. AC repair, heating repair, maintenance plans, and 24/7 emergency service.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          cobalt: {
+            50:  '#EEF3FF',
+            100: '#DCE7FF',
+            200: '#B9CFFF',
+            300: '#8FB0FF',
+            400: '#5C86FF',
+            500: '#3363F2',
+            600: '#1E4FD6',
+            700: '#173EAC',
+            800: '#132F82',
+            900: '#0F2158',
+          },
+          cream: {
+            DEFAULT: '#FAF7F1',
+            100: '#F5F0E6',
+            200: '#EFE8D8',
+          },
+          ink: {
+            DEFAULT: '#15181D',
+            600: '#3D4249',
+          },
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #FAF7F1; color: #15181D; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+  }
+</style>
+</head>
+<body class="font-sans text-ink antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 h-[72px] bg-cream/95 backdrop-blur border-b border-ink/10">
+  <div class="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2 shrink-0">
+      <span class="flex h-9 w-9 items-center justify-center rounded-2xl bg-cobalt-600 text-white">
+        <i class="ph-fill ph-wind text-lg"></i>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-base font-bold tracking-tight">Prudhom</span>
+        <span class="block text-[11px] font-medium text-ink-600 -mt-0.5">Heating &amp; Air Conditioning</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-ink-600">
+      <a href="#services" class="hover:text-cobalt-600 transition-colors">Services</a>
+      <a href="#reviews" class="hover:text-cobalt-600 transition-colors">Reviews</a>
+      <a href="#about" class="hover:text-cobalt-600 transition-colors">About</a>
+      <a href="#contact" class="hover:text-cobalt-600 transition-colors">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="tel:+14052855757" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-cobalt-600 hover:bg-cobalt-700 transition-colors text-white text-sm font-semibold px-5 py-2.5">
+        <i class="ph-fill ph-phone-call text-base"></i>
+        (405) 285-5757
+      </a>
+      <button id="menu-toggle" aria-label="Toggle menu" class="lg:hidden flex h-10 w-10 items-center justify-center rounded-2xl border border-ink/15 text-ink">
+        <i class="ph ph-list text-xl" id="menu-icon-open"></i>
+        <i class="ph ph-x text-xl hidden" id="menu-icon-close"></i>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-ink/10 bg-cream px-4 py-4 space-y-3">
+    <a href="#services" class="block text-sm font-medium text-ink-600">Services</a>
+    <a href="#reviews" class="block text-sm font-medium text-ink-600">Reviews</a>
+    <a href="#about" class="block text-sm font-medium text-ink-600">About</a>
+    <a href="#contact" class="block text-sm font-medium text-ink-600">Contact</a>
+    <a href="tel:+14052855757" class="flex items-center justify-center gap-2 rounded-full bg-cobalt-600 text-white text-sm font-semibold px-5 py-3 mt-2">
+      <i class="ph-fill ph-phone-call text-base"></i>
+      (405) 285-5757
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="relative min-h-[calc(100dvh-72px)] flex items-center">
+  <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10 lg:py-6">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight leading-[1.05]">
+          The HVAC team Edmond has trusted since 1983.
+        </h1>
+        <p class="mt-5 text-lg text-ink-600 max-w-md leading-relaxed">
+          Same family-run company for four decades. Thirty local technicians ready for AC, heating, and emergency calls, day or night.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-cobalt-600 hover:bg-cobalt-700 transition-colors text-white text-sm font-semibold px-7 py-3.5">
+            Schedule Service
+          </a>
+          <a href="tel:+14052855757" class="inline-flex items-center gap-2 rounded-full border border-ink/20 hover:border-cobalt-600 hover:text-cobalt-600 transition-colors text-sm font-semibold px-7 py-3.5">
+            <i class="ph-bold ph-phone text-base"></i>
+            (405) 285-5757
+          </a>
+        </div>
+        <div class="mt-8 flex items-center gap-3">
+          <div class="flex items-center gap-0.5 text-cobalt-600">
+            <i class="ph-fill ph-star text-base"></i>
+            <i class="ph-fill ph-star text-base"></i>
+            <i class="ph-fill ph-star text-base"></i>
+            <i class="ph-fill ph-star text-base"></i>
+            <i class="ph-fill ph-star text-base"></i>
+          </div>
+          <p class="text-sm text-ink-600">4.9 average rating from Edmond homeowners</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-[16/11]">
+          <img
+            src="https://picsum.photos/seed/prudhom-technician-ac-unit-service/1400/1000"
+            alt="Prudhom HVAC technician servicing an outdoor air conditioning unit at an Edmond home"
+            class="h-full w-full object-cover"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl bg-cream/95 backdrop-blur px-5 py-4">
+            <div>
+              <p class="text-sm font-bold">42+ years, one family business</p>
+              <p class="text-xs text-ink-600">30 local technicians and staff, still Edmond owned</p>
+            </div>
+            <div class="hidden sm:flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-cobalt-600 text-white">
+              <i class="ph-fill ph-shield-check text-lg"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="reveal border-y border-ink/10 bg-cream-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 divide-y divide-ink/10 lg:divide-y-0 lg:divide-x">
+      <div class="flex items-center gap-3 py-4 lg:py-0 lg:px-6 lg:first:pl-0">
+        <i class="ph-bold ph-calendar-check text-2xl text-cobalt-600"></i>
+        <div>
+          <p class="text-xl font-extrabold leading-tight">42+ Years</p>
+          <p class="text-xs text-ink-600">Serving Edmond since 1983</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 py-4 lg:py-0 lg:px-6">
+        <i class="ph-bold ph-users-three text-2xl text-cobalt-600"></i>
+        <div>
+          <p class="text-xl font-extrabold leading-tight">30+ Team</p>
+          <p class="text-xs text-ink-600">Technicians, installers, staff</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 py-4 lg:py-0 lg:px-6">
+        <i class="ph-bold ph-shield-check text-2xl text-cobalt-600"></i>
+        <div>
+          <p class="text-xl font-extrabold leading-tight">Licensed</p>
+          <p class="text-xs text-ink-600">Bonded and insured in Oklahoma</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 py-4 lg:py-0 lg:px-6 lg:last:pr-0">
+        <i class="ph-bold ph-phone-call text-2xl text-cobalt-600"></i>
+        <div>
+          <p class="text-xl font-extrabold leading-tight">24/7</p>
+          <p class="text-xs text-ink-600">Emergency dispatch, every day</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="reveal py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Every comfort system, one trusted call.</h2>
+      <p class="mt-4 text-ink-600 text-lg leading-relaxed">From a noisy furnace to a full system replacement, our technicians carry the training and the parts to get it done right the first visit.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-2 gap-4">
+
+      <div class="lg:col-span-2 lg:row-span-2 relative rounded-2xl overflow-hidden min-h-[320px]">
+        <img
+          src="https://picsum.photos/seed/prudhom-ac-repair-technician/1000/1000"
+          alt="Technician repairing a residential air conditioning unit"
+          class="h-full w-full object-cover"
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <i class="ph-fill ph-snowflake text-2xl text-white mb-2"></i>
+          <h3 class="text-xl font-bold text-white">AC Repair &amp; Installation</h3>
+          <p class="mt-2 text-sm text-white/85 leading-relaxed max-w-sm">Diagnosed and quoted honestly, whether it is a failed capacitor or a full replacement before the next Oklahoma summer.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 relative rounded-2xl overflow-hidden min-h-[220px]">
+        <img
+          src="https://picsum.photos/seed/prudhom-furnace-technician-tools/900/500"
+          alt="Technician working on a home furnace unit"
+          class="h-full w-full object-cover"
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <i class="ph-fill ph-fire text-2xl text-white mb-2"></i>
+          <h3 class="text-xl font-bold text-white">Heating Repair &amp; Installation</h3>
+          <p class="mt-2 text-sm text-white/85 leading-relaxed max-w-sm">A furnace that quits in January is not a wait-and-see problem. Most repairs are finished the same visit.</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-cobalt-600 text-white p-6 flex flex-col justify-between min-h-[220px]">
+        <i class="ph-fill ph-wrench text-2xl"></i>
+        <div>
+          <h3 class="text-lg font-bold">Maintenance Plans</h3>
+          <p class="mt-2 text-sm text-white/85 leading-relaxed">Two visits a year, spring and fall, catch small problems before they become an overnight breakdown.</p>
+        </div>
+      </div>
+
+      <div class="relative rounded-2xl overflow-hidden min-h-[220px]">
+        <img
+          src="https://picsum.photos/seed/prudhom-indoor-air-quality-filter/700/700"
+          alt="Close-up of an HVAC air filtration system being installed"
+          class="h-full w-full object-cover"
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <i class="ph-fill ph-wind text-2xl text-white mb-2"></i>
+          <h3 class="text-lg font-bold text-white">Indoor Air Quality</h3>
+          <p class="mt-2 text-sm text-white/85 leading-relaxed">Filtration and humidity control that make the air inside your home worth breathing.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-10">
+      <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-cobalt-600 hover:bg-cobalt-700 transition-colors text-white text-sm font-semibold px-7 py-3.5">
+        Schedule Service
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reveal py-20 lg:py-28 bg-cream-100 border-y border-ink/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12">
+
+      <div class="lg:col-span-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Forty-two years earns a reputation.</h2>
+        <p class="mt-4 text-ink-600 leading-relaxed">Now that reputation is finally easy to find in one place.</p>
+
+        <div class="mt-8 rounded-2xl bg-cream border border-ink/10 p-6">
+          <p class="text-5xl font-extrabold text-cobalt-600 leading-none">4.9</p>
+          <div class="flex items-center gap-0.5 mt-3 text-cobalt-600">
+            <i class="ph-fill ph-star text-lg"></i>
+            <i class="ph-fill ph-star text-lg"></i>
+            <i class="ph-fill ph-star text-lg"></i>
+            <i class="ph-fill ph-star text-lg"></i>
+            <i class="ph-fill ph-star text-lg"></i>
+          </div>
+          <p class="mt-3 text-sm text-ink-600 leading-relaxed">Average rating from 300+ verified reviews across Google and Facebook.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-8 divide-y divide-ink/10">
+
+        <div class="py-6 first:pt-0">
+          <i class="ph-fill ph-quotes text-2xl text-cobalt-300"></i>
+          <p class="mt-3 text-lg leading-relaxed">Our AC quit on the hottest day of July. They had a technician here in under two hours and cool air by dinner.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-cobalt-100 text-cobalt-700 text-sm font-bold">DH</span>
+            <div>
+              <p class="text-sm font-semibold">Denise Holbrook</p>
+              <p class="text-xs text-ink-600">Edmond, OK</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-6">
+          <i class="ph-fill ph-quotes text-2xl text-cobalt-300"></i>
+          <p class="mt-3 text-lg leading-relaxed">Furnace died at 11pm in January. Prudhom answered the phone themselves and had someone out before sunrise.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-cobalt-100 text-cobalt-700 text-sm font-bold">MR</span>
+            <div>
+              <p class="text-sm font-semibold">Marcus Reyes</p>
+              <p class="text-xs text-ink-600">North Edmond, OK</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-6 last:pb-0">
+          <i class="ph-fill ph-quotes text-2xl text-cobalt-300"></i>
+          <p class="mt-3 text-lg leading-relaxed">We have used their maintenance plan for six years. Never once had a surprise breakdown, same technician every spring.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-cobalt-100 text-cobalt-700 text-sm font-bold">KL</span>
+            <div>
+              <p class="text-sm font-semibold">Kathy Lindsey</p>
+              <p class="text-xs text-ink-600">Coffee Creek, Edmond</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US / STORY -->
+<section id="about" class="reveal py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+      <div class="rounded-2xl overflow-hidden">
+        <img
+          src="https://picsum.photos/seed/prudhom-family-team-truck/1000/1200"
+          alt="Prudhom Heating and Air Conditioning service team standing beside their fleet trucks"
+          class="w-full h-full object-cover aspect-[4/5]"
+        >
+      </div>
+
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Still family-run, forty-two years in.</h2>
+        <p class="mt-5 text-ink-600 leading-relaxed">
+          Ray Prudhom started the company in 1983 with one truck and a promise to show up when he said he would. That promise is still how the company runs.
+        </p>
+        <p class="mt-4 text-ink-600 leading-relaxed">
+          Today his daughter, Michelle Prudhom-Carter, runs day-to-day operations with a team of thirty technicians, installers, and office staff, many of whom have been with the company for over a decade.
+        </p>
+        <p class="mt-4 text-ink-600 leading-relaxed">
+          We are one of the largest HVAC teams in the Edmond and Oklahoma City metro area. We just never made much noise about it online, until now.
+        </p>
+
+        <div class="mt-8 grid grid-cols-2 gap-4 max-w-sm">
+          <div>
+            <p class="text-2xl font-extrabold text-cobalt-600">1983</p>
+            <p class="text-xs text-ink-600 mt-1">Company founded in Edmond</p>
+          </div>
+          <div>
+            <p class="text-2xl font-extrabold text-cobalt-600">2 gen</p>
+            <p class="text-xs text-ink-600 mt-1">Family leadership, same values</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY CALLOUT -->
+<section class="reveal bg-cobalt-600 text-white py-20 lg:py-24">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <i class="ph-fill ph-clock-countdown text-4xl text-cobalt-200"></i>
+    <h2 class="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight">Nobody plans when the AC dies.</h2>
+    <p class="mt-4 text-cobalt-100 text-lg leading-relaxed max-w-xl mx-auto">
+      A broken system does not wait for business hours. Our dispatch line is answered by a real person, 24 hours a day, every day of the year.
+    </p>
+    <div class="mt-8">
+      <a href="tel:+14052855757" class="inline-flex items-center gap-2 rounded-full bg-white text-cobalt-700 hover:bg-cream transition-colors text-sm font-semibold px-8 py-4">
+        <i class="ph-bold ph-phone text-base"></i>
+        (405) 285-5757
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+
+      <div class="lg:col-span-7">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Request service</h2>
+        <p class="mt-4 text-ink-600 leading-relaxed max-w-md">Tell us what is going on and a real person will call you back, usually within the hour during business hours.</p>
+
+        <form id="contact-form" class="mt-8 space-y-5 max-w-lg">
+          <div>
+            <label for="name" class="block text-sm font-semibold mb-2">Full name</label>
+            <input type="text" id="name" name="name" required
+              class="w-full rounded-2xl border border-ink/15 bg-cream px-4 py-3 text-sm focus:border-cobalt-600 focus:ring-2 focus:ring-cobalt-200 transition-colors">
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-semibold mb-2">Phone number</label>
+            <input type="tel" id="phone" name="phone" required
+              class="w-full rounded-2xl border border-ink/15 bg-cream px-4 py-3 text-sm focus:border-cobalt-600 focus:ring-2 focus:ring-cobalt-200 transition-colors">
+          </div>
+          <div>
+            <label for="service" class="block text-sm font-semibold mb-2">Service needed</label>
+            <select id="service" name="service" required
+              class="w-full rounded-2xl border border-ink/15 bg-cream px-4 py-3 text-sm focus:border-cobalt-600 focus:ring-2 focus:ring-cobalt-200 transition-colors">
+              <option value="">Select a service</option>
+              <option value="ac-repair">AC repair or installation</option>
+              <option value="heating-repair">Heating repair or installation</option>
+              <option value="maintenance">Maintenance plan</option>
+              <option value="air-quality">Indoor air quality</option>
+              <option value="emergency">Emergency, need help now</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold mb-2">Message</label>
+            <textarea id="message" name="message" rows="4"
+              class="w-full rounded-2xl border border-ink/15 bg-cream px-4 py-3 text-sm focus:border-cobalt-600 focus:ring-2 focus:ring-cobalt-200 transition-colors resize-none"></textarea>
+          </div>
+          <button type="submit"
+            class="inline-flex items-center gap-2 rounded-full bg-cobalt-600 hover:bg-cobalt-700 transition-colors text-white text-sm font-semibold px-7 py-3.5">
+            Send Request
+          </button>
+        </form>
+
+        <div id="contact-success" class="hidden mt-8 max-w-lg rounded-2xl border border-cobalt-200 bg-cobalt-50 p-6">
+          <i class="ph-fill ph-check-circle text-3xl text-cobalt-600"></i>
+          <p class="mt-3 font-bold">Thanks, we will call you back shortly.</p>
+          <p class="mt-1 text-sm text-ink-600">If this is an emergency, please call us directly at (405) 285-5757.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="rounded-2xl overflow-hidden">
+          <img
+            src="https://picsum.photos/seed/prudhom-office-exterior-edmond/700/500"
+            alt="Prudhom Heating and Air Conditioning office building exterior in Edmond, Oklahoma"
+            class="w-full h-56 object-cover"
+          >
+          <div class="bg-cream-100 border border-t-0 border-ink/10 rounded-b-2xl p-6 space-y-5">
+            <div class="flex items-start gap-3">
+              <i class="ph-bold ph-map-pin text-lg text-cobalt-600 mt-0.5"></i>
+              <div>
+                <p class="text-sm font-semibold">Office</p>
+                <p class="text-sm text-ink-600">14909 Santa Fe Crossings Dr<br>Edmond, OK 73013</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="ph-bold ph-clock text-lg text-cobalt-600 mt-0.5"></i>
+              <div>
+                <p class="text-sm font-semibold">Office hours</p>
+                <p class="text-sm text-ink-600">Monday to Friday, 7am to 6pm<br>Emergency dispatch, 24/7</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="ph-bold ph-phone text-lg text-cobalt-600 mt-0.5"></i>
+              <div>
+                <p class="text-sm font-semibold">Call or text</p>
+                <a href="tel:+14052855757" class="text-sm text-cobalt-600 font-semibold">(405) 285-5757</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-cobalt-900 text-cream-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="flex h-9 w-9 items-center justify-center rounded-2xl bg-white text-cobalt-700">
+            <i class="ph-fill ph-wind text-lg"></i>
+          </span>
+          <span class="leading-tight">
+            <span class="block text-base font-bold text-white">Prudhom</span>
+            <span class="block text-[11px] text-cobalt-200 -mt-0.5">Heating &amp; Air Conditioning</span>
+          </span>
+        </div>
+        <p class="mt-4 text-sm text-cobalt-100 leading-relaxed">Family-owned HVAC contractor serving Edmond and the OKC metro since 1983.</p>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-white">Contact</p>
+        <ul class="mt-4 space-y-2 text-sm text-cobalt-100">
+          <li>14909 Santa Fe Crossings Dr</li>
+          <li>Edmond, OK 73013</li>
+          <li><a href="tel:+14052855757" class="hover:text-white transition-colors">(405) 285-5757</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-white">Service area</p>
+        <ul class="mt-4 space-y-2 text-sm text-cobalt-100">
+          <li>Edmond</li>
+          <li>Oklahoma City</li>
+          <li>Norman, Guthrie, and the OKC metro</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-white">Hours</p>
+        <ul class="mt-4 space-y-2 text-sm text-cobalt-100">
+          <li>Monday to Friday, 7am to 6pm</li>
+          <li>Emergency dispatch, 24/7</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <p class="text-xs text-cobalt-200">Copyright 2026 Prudhom Heating &amp; Air Conditioning, LLC. All rights reserved.</p>
+      <p class="text-xs text-cobalt-200">Oklahoma HVAC Contractor License #[Placeholder]. Licensed, bonded, and insured.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  menuToggle.addEventListener('click', function () {
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+
+  // Contact form fake submission with static success state
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('contact-success');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    form.classList.add('hidden');
+    success.classList.remove('hidden');
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Scroll reveal animation, respects prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      el.classList.add('in-view');
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jack's Bar-B-Q | Route 66 Pit Smoked Barbecue, Oklahoma City</title>
+<meta name="description" content="Jack's Bar-B-Q has been smoking brisket, ribs and pulled pork on Route 66 in Oklahoma City since 1963. Order online or book catering for 25 to 2,000 guests.">
+
+<!-- Fonts: Oswald (condensed display) + Work Sans (body/menu). Loaded via link tag, static HTML, no build step. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons: Phosphor Icons (real icon library via CDN), bold weight used consistently throughout -->
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+<!-- Tailwind via CDN, single file, no build step -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          // Single locked accent: "ember", a smoked mesquite red-orange. Used everywhere for CTAs/links/accents.
+          ember: {
+            50:  '#fdf1ec',
+            100: '#fbdfd2',
+            200: '#f2b898',
+            300: '#e88f5e',
+            400: '#e0692f',
+            500: '#d9481f',
+            600: '#b53a19',
+            700: '#8f2e14',
+            800: '#6b220f',
+            900: '#4a170a'
+          },
+          // Warm off-black base ("Black and Tan" family). Never pure #000.
+          smoke: {
+            900: '#1b1714',
+            950: '#100d0b'
+          }
+        },
+        fontFamily: {
+          display: ['Oswald', 'sans-serif'],
+          sans: ['"Work Sans"', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  /*
+    CORNER RADIUS SYSTEM (locked, applied consistently):
+      - Buttons / pills / badges: fully rounded (rounded-full)
+      - Cards / photos / panels: 1rem (rounded-2xl)
+      - Form inputs: 0.5rem (rounded-lg)
+    No other radius values are used on this page.
+  */
+  body { font-family: 'Work Sans', sans-serif; }
+  h1, h2, h3, h4, .font-display { font-family: 'Oswald', sans-serif; }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  ::selection { background-color: #d9481f; color: #fff; }
+</style>
+</head>
+
+<body class="bg-smoke-950 text-stone-200 antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50 h-16 bg-smoke-950/95 backdrop-blur border-b border-white/10">
+  <div class="max-w-7xl mx-auto h-full px-4 sm:px-6 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2 shrink-0">
+      <i class="ph-bold ph-fire text-ember-500 text-2xl"></i>
+      <span class="font-display font-bold text-lg sm:text-xl tracking-tight text-white leading-none">JACK'S <span class="text-ember-500">BAR-B-Q</span></span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-300">
+      <a href="#menu" class="hover:text-ember-400 transition-colors">Menu</a>
+      <a href="#catering" class="hover:text-ember-400 transition-colors">Catering</a>
+      <a href="#story" class="hover:text-ember-400 transition-colors">Story</a>
+      <a href="#reviews" class="hover:text-ember-400 transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-ember-400 transition-colors">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#order" class="hidden sm:inline-flex items-center gap-2 bg-ember-500 hover:bg-ember-400 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
+        <i class="ph-bold ph-shopping-bag"></i> Order Online
+      </a>
+      <button id="menuToggle" aria-label="Open menu" aria-expanded="false" class="lg:hidden text-stone-200 text-2xl p-1">
+        <i class="ph-bold ph-list"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav panel -->
+  <div id="mobilePanel" class="hidden lg:hidden bg-smoke-950 border-b border-white/10">
+    <nav class="flex flex-col px-4 py-4 gap-1 text-stone-300 text-base">
+      <a href="#menu" class="py-2.5 border-b border-white/5 hover:text-ember-400">Menu</a>
+      <a href="#catering" class="py-2.5 border-b border-white/5 hover:text-ember-400">Catering</a>
+      <a href="#story" class="py-2.5 border-b border-white/5 hover:text-ember-400">Story</a>
+      <a href="#reviews" class="py-2.5 border-b border-white/5 hover:text-ember-400">Reviews</a>
+      <a href="#contact" class="py-2.5 hover:text-ember-400">Contact</a>
+      <a href="#order" class="mt-3 inline-flex items-center justify-center gap-2 bg-ember-500 text-white font-semibold px-5 py-3 rounded-full">
+        <i class="ph-bold ph-shopping-bag"></i> Order Online
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative min-h-[100dvh] flex items-end pt-24 pb-16 sm:pb-20">
+  <div class="absolute inset-0 -z-10">
+    <img src="https://picsum.photos/seed/jacksbbq-brisket-hero/1920/1440" alt="Sliced smoked brisket and ribs plated at Jack's Bar-B-Q" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-smoke-950 via-smoke-950/70 to-smoke-950/20"></div>
+    <div class="absolute inset-0 bg-smoke-950/25"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+    <div class="max-w-2xl">
+      <h1 class="font-display font-bold text-white text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight">
+        Slow Smoked on Route&nbsp;66 <span class="text-ember-500">Since 1963.</span>
+      </h1>
+      <p class="mt-5 text-stone-200 text-lg sm:text-xl max-w-xl leading-relaxed">
+        Wood pit brisket, ribs and pulled pork, smoked the same way Route 66 travelers have loved for over 60 years.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href="#order" class="inline-flex items-center gap-2 bg-ember-500 hover:bg-ember-400 text-white font-semibold text-base px-7 py-3.5 rounded-full transition-colors">
+          <i class="ph-bold ph-shopping-bag"></i> Order Online
+        </a>
+        <a href="#menu" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-base px-7 py-3.5 rounded-full border border-white/25 backdrop-blur transition-colors">
+          View Menu
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST / HERITAGE BAR ============ -->
+<section class="bg-smoke-900 border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 md:divide-x md:divide-white/10 text-center">
+      <div class="reveal flex flex-col items-center gap-2 md:px-4">
+        <i class="ph-bold ph-clock-counter-clockwise text-ember-500 text-3xl"></i>
+        <div class="font-display text-2xl sm:text-3xl font-semibold text-white">Since 1963</div>
+        <p class="text-sm text-stone-400">60+ years pit smoking</p>
+      </div>
+      <div class="reveal flex flex-col items-center gap-2 md:px-4">
+        <i class="ph-bold ph-road-horizon text-ember-500 text-3xl"></i>
+        <div class="font-display text-2xl sm:text-3xl font-semibold text-white">Route 66</div>
+        <p class="text-sm text-stone-400">Original roadside icon</p>
+      </div>
+      <div class="reveal flex flex-col items-center gap-2 md:px-4">
+        <i class="ph-bold ph-users-three text-ember-500 text-3xl"></i>
+        <div class="font-display text-2xl sm:text-3xl font-semibold text-white">25 to 2,000</div>
+        <p class="text-sm text-stone-400">Guests catered</p>
+      </div>
+      <div class="reveal flex flex-col items-center gap-2 md:px-4">
+        <i class="ph-bold ph-star text-ember-500 text-3xl"></i>
+        <div class="font-display text-2xl sm:text-3xl font-semibold text-white">4.6 / 5</div>
+        <p class="text-sm text-stone-400">200+ Restaurantji reviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section id="menu" class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="reveal max-w-2xl mb-12">
+      <h2 class="font-display font-bold text-white text-4xl sm:text-5xl tracking-tight">The Menu</h2>
+      <p class="mt-4 text-stone-400 text-lg leading-relaxed">Everything is smoked low and slow over post oak, right here on the property, every single day.</p>
+    </div>
+
+    <!-- Featured plates: photo card grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="reveal group bg-smoke-900 rounded-2xl overflow-hidden border border-white/10 hover:border-ember-500/50 transition-colors">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/seed/jacksbbq-brisket-plate/800/600" alt="Brisket plate with two sides at Jack's Bar-B-Q" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="font-display font-semibold text-white text-xl">Brisket Plate</h3>
+            <span class="font-display text-ember-400 text-xl font-semibold shrink-0">$17.99</span>
+          </div>
+          <p class="mt-2 text-sm text-stone-400 leading-relaxed">Hand-rubbed brisket smoked 14 hours over post oak, served with two sides and white bread.</p>
+        </div>
+      </article>
+
+      <article class="reveal group bg-smoke-900 rounded-2xl overflow-hidden border border-white/10 hover:border-ember-500/50 transition-colors">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/seed/jacksbbq-ribs-plate/800/600" alt="Half rack of pit smoked ribs at Jack's Bar-B-Q" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="font-display font-semibold text-white text-xl">Ribs Plate</h3>
+            <span class="font-display text-ember-400 text-xl font-semibold shrink-0">$18.99</span>
+          </div>
+          <p class="mt-2 text-sm text-stone-400 leading-relaxed">Half rack, dry-rubbed and pit smoked, finished with our tangy house sauce on the side.</p>
+        </div>
+      </article>
+
+      <article class="reveal group bg-smoke-900 rounded-2xl overflow-hidden border border-white/10 hover:border-ember-500/50 transition-colors">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/seed/jacksbbq-pulled-pork-plate/800/600" alt="Pulled pork plate at Jack's Bar-B-Q" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="font-display font-semibold text-white text-xl">Pulled Pork Plate</h3>
+            <span class="font-display text-ember-400 text-xl font-semibold shrink-0">$14.99</span>
+          </div>
+          <p class="mt-2 text-sm text-stone-400 leading-relaxed">Pit-smoked pork shoulder, pulled fresh to order and piled high with two sides.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Sandwiches: compact row -->
+    <div class="reveal mt-10 grid sm:grid-cols-3 gap-4">
+      <div class="flex items-center justify-between gap-4 bg-smoke-900 border border-white/10 rounded-2xl px-5 py-4">
+        <div>
+          <h4 class="font-display font-semibold text-white text-base">Chopped Beef Sandwich</h4>
+          <p class="text-xs text-stone-400 mt-0.5">On a toasted bun</p>
+        </div>
+        <span class="font-display text-ember-400 font-semibold">$9.49</span>
+      </div>
+      <div class="flex items-center justify-between gap-4 bg-smoke-900 border border-white/10 rounded-2xl px-5 py-4">
+        <div>
+          <h4 class="font-display font-semibold text-white text-base">Pulled Pork Sandwich</h4>
+          <p class="text-xs text-stone-400 mt-0.5">Piled high, house sauce</p>
+        </div>
+        <span class="font-display text-ember-400 font-semibold">$8.49</span>
+      </div>
+      <div class="flex items-center justify-between gap-4 bg-smoke-900 border border-white/10 rounded-2xl px-5 py-4">
+        <div>
+          <h4 class="font-display font-semibold text-white text-base">Smoked Turkey Sandwich</h4>
+          <p class="text-xs text-stone-400 mt-0.5">Sliced fresh daily</p>
+        </div>
+        <span class="font-display text-ember-400 font-semibold">$8.99</span>
+      </div>
+    </div>
+
+    <!-- Sides: chip grid -->
+    <div class="reveal mt-10">
+      <h3 class="font-display font-semibold text-white text-lg mb-4">Sides</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div class="bg-smoke-900 border border-white/10 rounded-2xl px-4 py-3 text-center">
+          <p class="text-sm font-medium text-stone-200">Mac and Cheese</p>
+          <p class="text-ember-400 font-display font-semibold mt-1">$3.99</p>
+        </div>
+        <div class="bg-smoke-900 border border-white/10 rounded-2xl px-4 py-3 text-center">
+          <p class="text-sm font-medium text-stone-200">Baked Beans</p>
+          <p class="text-ember-400 font-display font-semibold mt-1">$3.49</p>
+        </div>
+        <div class="bg-smoke-900 border border-white/10 rounded-2xl px-4 py-3 text-center">
+          <p class="text-sm font-medium text-stone-200">Coleslaw</p>
+          <p class="text-ember-400 font-display font-semibold mt-1">$3.49</p>
+        </div>
+        <div class="bg-smoke-900 border border-white/10 rounded-2xl px-4 py-3 text-center">
+          <p class="text-sm font-medium text-stone-200">Potato Salad</p>
+          <p class="text-ember-400 font-display font-semibold mt-1">$3.49</p>
+        </div>
+        <div class="bg-smoke-900 border border-white/10 rounded-2xl px-4 py-3 text-center">
+          <p class="text-sm font-medium text-stone-200">Fried Okra</p>
+          <p class="text-ember-400 font-display font-semibold mt-1">$3.99</p>
+        </div>
+        <div class="bg-smoke-900 border border-white/10 rounded-2xl px-4 py-3 text-center">
+          <p class="text-sm font-medium text-stone-200">Green Beans</p>
+          <p class="text-ember-400 font-display font-semibold mt-1">$3.49</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATERING ============ -->
+<section id="catering" class="py-20 sm:py-28 bg-smoke-900 border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal order-2 lg:order-1">
+      <h2 class="font-display font-bold text-white text-4xl sm:text-5xl tracking-tight leading-tight">
+        Feeding Family Reunions, Weddings and Company Cookouts
+      </h2>
+      <p class="mt-5 text-stone-400 text-lg leading-relaxed">
+        From a backyard birthday to a 2,000 person company picnic, our catering team smokes it fresh and delivers it hot, on time, every time.
+      </p>
+      <ul class="mt-7 space-y-3 text-stone-200">
+        <li class="flex items-center gap-3"><i class="ph-bold ph-check-circle text-ember-500 text-xl"></i> Serving 25 to 2,000 guests</li>
+        <li class="flex items-center gap-3"><i class="ph-bold ph-check-circle text-ember-500 text-xl"></i> Drop-off or full-service setup</li>
+        <li class="flex items-center gap-3"><i class="ph-bold ph-check-circle text-ember-500 text-xl"></i> Custom menus for weddings, offices and reunions</li>
+      </ul>
+      <a href="#contact" class="mt-8 inline-flex items-center gap-2 bg-ember-500 hover:bg-ember-400 text-white font-semibold text-base px-7 py-3.5 rounded-full transition-colors">
+        <i class="ph-bold ph-calendar-plus"></i> Plan Your Catering
+      </a>
+    </div>
+    <div class="reveal order-1 lg:order-2">
+      <img src="https://picsum.photos/seed/jacksbbq-catering-spread/1000/800" alt="Full catering spread of smoked meats and sides from Jack's Bar-B-Q" class="w-full h-full object-cover rounded-2xl border border-white/10">
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY / HERITAGE ============ -->
+<section id="story" class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal grid grid-cols-3 gap-3">
+      <img src="https://picsum.photos/seed/jacksbbq-smoker-pit/700/900" alt="Wood-fired smoker pit at Jack's Bar-B-Q" class="col-span-2 w-full h-full object-cover rounded-2xl border border-white/10">
+      <img src="https://picsum.photos/seed/jacksbbq-route66-storefront/400/900" alt="Jack's Bar-B-Q storefront on Route 66 in Oklahoma City" class="w-full h-full object-cover rounded-2xl border border-white/10">
+    </div>
+    <div class="reveal">
+      <h2 class="font-display font-bold text-white text-4xl sm:text-5xl tracking-tight leading-tight">
+        Same Pit, Same Family, Six Decades
+      </h2>
+      <p class="mt-5 text-stone-400 text-lg leading-relaxed">
+        Jack's opened its doors on Route 66 in Oklahoma City back in 1963, and the pit out back has been burning post oak ever since. Three generations of pitmasters, one method, no shortcuts.
+      </p>
+      <p class="mt-4 text-stone-400 text-lg leading-relaxed">
+        Travelers rolling through on the Mother Road stop for the same brisket regulars have been ordering since Kennedy was in office. That is not nostalgia talking, that is just how long it takes to get barbecue right.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews" class="py-20 sm:py-28 bg-smoke-900 border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="reveal flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+      <h2 class="font-display font-bold text-white text-4xl sm:text-5xl tracking-tight">What OKC Says</h2>
+      <div class="flex items-center gap-2">
+        <div class="flex text-ember-500 text-xl">
+          <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-bold ph-star-half"></i>
+        </div>
+        <span class="text-stone-300 text-sm">4.6 out of 5, 200+ reviews on Restaurantji</span>
+      </div>
+    </div>
+
+    <div class="reveal flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <blockquote class="snap-start shrink-0 w-[85%] sm:w-[420px] bg-smoke-950 border border-white/10 rounded-2xl p-6">
+        <p class="text-stone-200 text-base leading-relaxed">"Brought my kids here after a Thunder game and they still talk about the burnt ends. This is what Route 66 barbecue is supposed to taste like."</p>
+        <footer class="mt-4 text-sm text-stone-400">Denise Whitlow, Oklahoma City</footer>
+      </blockquote>
+      <blockquote class="snap-start shrink-0 w-[85%] sm:w-[420px] bg-smoke-950 border border-white/10 rounded-2xl p-6">
+        <p class="text-stone-200 text-base leading-relaxed">"We used Jack's for my daughter's wedding, 300 plates, and every single one came out hot and on time. Best catering call we made all year."</p>
+        <footer class="mt-4 text-sm text-stone-400">Marcus Aldridge, Edmond</footer>
+      </blockquote>
+      <blockquote class="snap-start shrink-0 w-[85%] sm:w-[420px] bg-smoke-950 border border-white/10 rounded-2xl p-6">
+        <p class="text-stone-200 text-base leading-relaxed">"Been eating here since I was a kid in the 90s. The brisket hasn't changed and neither has the line out the door on Saturdays."</p>
+        <footer class="mt-4 text-sm text-stone-400">Ray Delgado, Bethany</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORDER / CONTACT ============ -->
+<section id="order" class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="reveal grid lg:grid-cols-2 gap-14">
+
+      <!-- Order + info -->
+      <div>
+        <h2 class="font-display font-bold text-white text-4xl sm:text-5xl tracking-tight">Hungry Tonight?</h2>
+        <p class="mt-4 text-stone-400 text-lg leading-relaxed max-w-md">Order online for pickup, or give us a call. Either way, it comes off the pit hot.</p>
+        <a href="tel:14056057790" class="mt-7 inline-flex items-center gap-2 bg-ember-500 hover:bg-ember-400 text-white font-semibold text-base px-7 py-3.5 rounded-full transition-colors">
+          <i class="ph-bold ph-shopping-bag"></i> Order Online
+        </a>
+
+        <div class="mt-12 space-y-6">
+          <div class="flex items-start gap-4">
+            <i class="ph-bold ph-clock text-ember-500 text-2xl shrink-0 mt-0.5"></i>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base">Hours</h3>
+              <p class="text-stone-400 text-sm mt-1">Monday to Saturday, 11:00 AM to 9:00 PM</p>
+              <p class="text-stone-400 text-sm">Sunday, 12:00 PM to 7:00 PM</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <i class="ph-bold ph-map-pin text-ember-500 text-2xl shrink-0 mt-0.5"></i>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base">Address</h3>
+              <p class="text-stone-400 text-sm mt-1">2601 NW 39th Expressway, Oklahoma City, OK 73112</p>
+              <p class="text-stone-400 text-sm">On historic Route 66</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <i class="ph-bold ph-phone text-ember-500 text-2xl shrink-0 mt-0.5"></i>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base">Phone</h3>
+              <a href="tel:14056057790" class="text-stone-400 text-sm mt-1 hover:text-ember-400 transition-colors block">(405) 605-7790</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Catering inquiry form -->
+      <div id="contact" class="bg-smoke-900 border border-white/10 rounded-2xl p-6 sm:p-8">
+        <h3 class="font-display font-semibold text-white text-2xl">Catering Inquiry</h3>
+        <p class="text-stone-400 text-sm mt-2">Planning an event for 25 to 2,000 people? Tell us the basics and we will call you back.</p>
+
+        <form id="cateringForm" class="mt-6 space-y-5">
+          <div>
+            <label for="fullName" class="block text-sm font-medium text-stone-200 mb-1.5">Name</label>
+            <input type="text" id="fullName" name="fullName" required class="w-full bg-smoke-950 border border-white/15 rounded-lg px-4 py-2.5 text-stone-100 placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-ember-500 focus:border-ember-500">
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="eventDate" class="block text-sm font-medium text-stone-200 mb-1.5">Event date</label>
+              <input type="date" id="eventDate" name="eventDate" required class="w-full bg-smoke-950 border border-white/15 rounded-lg px-4 py-2.5 text-stone-100 focus:outline-none focus:ring-2 focus:ring-ember-500 focus:border-ember-500">
+            </div>
+            <div>
+              <label for="headcount" class="block text-sm font-medium text-stone-200 mb-1.5">Headcount</label>
+              <input type="number" id="headcount" name="headcount" min="25" max="2000" required class="w-full bg-smoke-950 border border-white/15 rounded-lg px-4 py-2.5 text-stone-100 focus:outline-none focus:ring-2 focus:ring-ember-500 focus:border-ember-500">
+            </div>
+          </div>
+          <div>
+            <label for="phoneNumber" class="block text-sm font-medium text-stone-200 mb-1.5">Phone</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required class="w-full bg-smoke-950 border border-white/15 rounded-lg px-4 py-2.5 text-stone-100 placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-ember-500 focus:border-ember-500">
+          </div>
+          <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-ember-500 hover:bg-ember-400 text-white font-semibold text-base px-7 py-3.5 rounded-full transition-colors">
+            Send Inquiry
+          </button>
+        </form>
+
+        <div id="formSuccess" class="hidden text-center py-8">
+          <i class="ph-bold ph-check-circle text-ember-500 text-5xl"></i>
+          <p class="mt-4 text-white font-display font-semibold text-xl">Thanks, we'll be in touch.</p>
+          <p class="mt-2 text-stone-400 text-sm">A member of our catering team will call you within one business day.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-white/10 bg-smoke-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-2">
+          <i class="ph-bold ph-fire text-ember-500 text-2xl"></i>
+          <span class="font-display font-bold text-lg text-white">JACK'S <span class="text-ember-500">BAR-B-Q</span></span>
+        </div>
+        <p class="mt-3 text-sm text-stone-400 leading-relaxed">Pit smoked barbecue on Route 66 in Oklahoma City since 1963.</p>
+        <div class="flex items-center gap-4 mt-5 text-stone-400 text-xl">
+          <a href="#" aria-label="Facebook" class="hover:text-ember-400 transition-colors"><i class="ph-bold ph-facebook-logo"></i></a>
+          <a href="#" aria-label="Instagram" class="hover:text-ember-400 transition-colors"><i class="ph-bold ph-instagram-logo"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm uppercase tracking-wide">Hours</h4>
+        <p class="mt-3 text-sm text-stone-400">Monday to Saturday</p>
+        <p class="text-sm text-stone-400">11:00 AM to 9:00 PM</p>
+        <p class="mt-2 text-sm text-stone-400">Sunday</p>
+        <p class="text-sm text-stone-400">12:00 PM to 7:00 PM</p>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm uppercase tracking-wide">Visit</h4>
+        <p class="mt-3 text-sm text-stone-400">2601 NW 39th Expressway</p>
+        <p class="text-sm text-stone-400">Oklahoma City, OK 73112</p>
+        <p class="mt-2 text-sm text-stone-400">On historic Route 66</p>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm uppercase tracking-wide">Contact</h4>
+        <a href="tel:14056057790" class="mt-3 block text-sm text-stone-400 hover:text-ember-400 transition-colors">(405) 605-7790</a>
+        <a href="#contact" class="mt-2 block text-sm text-stone-400 hover:text-ember-400 transition-colors">Catering inquiries</a>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-white/10 text-xs text-stone-500">
+      Jack's Bar-B-Q, Oklahoma City, Oklahoma. This is a design demo built for review purposes.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobilePanel = document.getElementById('mobilePanel');
+  menuToggle.addEventListener('click', () => {
+    const isHidden = mobilePanel.classList.contains('hidden');
+    mobilePanel.classList.toggle('hidden');
+    menuToggle.setAttribute('aria-expanded', String(isHidden));
+  });
+  mobilePanel.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobilePanel.classList.add('hidden'));
+  });
+
+  // Fade-in-on-scroll
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
+  }
+
+  // Catering inquiry form: static demo submission, no live endpoint
+  const cateringForm = document.getElementById('cateringForm');
+  const formSuccess = document.getElementById('formSuccess');
+  cateringForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    cateringForm.classList.add('hidden');
+    formSuccess.classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>
